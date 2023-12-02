@@ -23,11 +23,13 @@ defmodule Advent do
         {acc, first}
 
       :nonumber ->
-        String.slice(line, 1..-1)
+        line
+        |> String.slice(1..-1)
         |> parse_line(acc, first)
 
       number ->
-        String.slice(line, 1..-1)
+        line
+        |> String.slice(1..-1)
         |> parse_line([number | acc], first || line)
     end
   end
